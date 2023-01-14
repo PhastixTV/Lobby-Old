@@ -1,0 +1,27 @@
+name: Lobbysystem
+version: '${project.version}'
+main: ch.phastixtv.lobbysystem.Lobbysystem
+api-version: 1.16
+authors: [ PhastixTV ]
+commands:
+  gamemode:
+    description: ändere deinen Spielmodus!
+    aliases: ["gm"]
+  heal:
+    description: heile dich!
+  setspawn:
+    description: setzt einen Spawn!
+  spawn:
+    description: teleportiere dich zum Spawn!
+    aliases: ["lobby", "l", "hub", "spawn"]
+  fly:
+    description: du kannst fliegen!
+  day:
+   description: setzte die Zeit auf Tag!
+  night:
+    description: setzt die Zeit auf Nacht!
+  chatclear:
+    description: leere den Chat!
+    aliases: ["cc"]
+  nick:
+    description: ändere deinen Namen!
