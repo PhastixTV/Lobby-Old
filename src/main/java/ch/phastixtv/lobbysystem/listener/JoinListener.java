@@ -26,21 +26,10 @@ public class JoinListener implements Listener {
     @EventHandler
     public void onJoin(PlayerJoinEvent event) {
         Player player = event.getPlayer();
-
-        //Clear inventory
-        player.getInventory().clear();
-
-        //Join Message
         event.setJoinMessage(null);
-        player.sendMessage(lobbysystem.getPrefix() + "Der Spieler §6" + player.getName() + " §rhat den Server betreten.");
+        player.sendMessage(lobbysystem.getPrefix() + "§lWillkommen auf dem Server!");
         player.sendMessage("");
-
-        //Join Items
-        ItemBuilder.setPlayerItems(player);
-
-        //Scoreboard
+        ItemBuilder.setBuildLobbyItems(player);
         new Scoreboard(player);
-
-        //Permissions
     }
 }

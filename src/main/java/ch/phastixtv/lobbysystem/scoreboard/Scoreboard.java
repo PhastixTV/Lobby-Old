@@ -18,15 +18,19 @@ public class Scoreboard extends ScoreboardBuilder{
 
     @Override
     public void createScoreboard() {
-        setScore(ChatColor.DARK_GRAY.toString() + "----------------",11 );
+        setScore(ChatColor.DARK_GRAY.toString() + "----------------",12 );
         setScore("§x",10);
-        setScore(ChatColor.GRAY.toString() + "Dein Rang:",9 );
+        setScore(ChatColor.GRAY.toString() + "Dein Rang:",11 );
         RegisteredServiceProvider<LuckPerms> provider = Bukkit.getServicesManager().getRegistration(LuckPerms.class);
         if (provider != null) {
             LuckPerms api = provider.getProvider();
             User user = LuckPermsProvider.get().getPlayerAdapter(Player.class).getUser(player);
             String prefix = user.getCachedData().getMetaData().getPrefix();
-            setScore(prefix, 8);
+            setScore(prefix, 10);
+        }
+        setScore(ChatColor.GRAY.toString() + "Spieler:", 9);
+        for (Player contester : Bukkit.getOnlinePlayers()) {
+            setScore(ChatColor.GRAY.toString() + contester + "§7/§a100", 8);
         }
         setScore("§c", 7);
         setScore(ChatColor.GRAY.toString() + "Coins:",6 );

@@ -5,6 +5,8 @@ import ch.phastixtv.lobbysystem.listener.JoinListener;
 import ch.phastixtv.lobbysystem.listener.SpawnListener;
 import ch.phastixtv.lobbysystem.util.Navigator;
 import org.bukkit.Bukkit;
+import org.bukkit.GameRule;
+import org.bukkit.World;
 import org.bukkit.plugin.PluginManager;
 import org.bukkit.plugin.java.JavaPlugin;
 
@@ -22,9 +24,18 @@ public final class Lobbysystem extends JavaPlugin {
     public void onEnable() {
         plugin = this;
 
-    initCommand();
-    initListener(Bukkit.getPluginManager());
-    saveConfig();
+        initCommand();
+        initListener(Bukkit.getPluginManager());
+        saveConfig();
+
+        for (World world : Bukkit.getWorlds()) {
+        world.setGameRule(GameRule.DO_MOB_SPAWNING, false);
+        world.setGameRule(GameRule.DO_DAYLIGHT_CYCLE, false);
+        world.setGameRule(GameRule.ANNOUNCE_ADVANCEMENTS, false);
+        world.setThundering(false);
+        world.setStorm(false);
+        }
+
     }
 
     //getter
