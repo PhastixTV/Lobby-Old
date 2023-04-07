@@ -24,4 +24,8 @@ commands:
     description: leere den Chat!
     aliases: ["cc"]
   nick:
-    description: ändere deinen Namen!
+    description: ändere deinen Namen!a
+  vanish:
+    description: werde unsichbar!
+    aliasses: ["vs", "v", "van"]
+

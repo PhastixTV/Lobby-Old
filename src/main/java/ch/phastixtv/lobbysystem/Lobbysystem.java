@@ -54,6 +54,7 @@ public final class Lobbysystem extends JavaPlugin {
         getCommand("night").setExecutor(new NightCommand(this));
         getCommand("chatclear").setExecutor(new ChatClearCommand(this));
         getCommand("nick").setExecutor(new NickCommand(this));
+        getCommand("vanish").setExecutor(new VanishCommand(this));
     }
 
     public void initListener(PluginManager pluginManager) {
